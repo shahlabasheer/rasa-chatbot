@@ -1,0 +1,70 @@
+version: "3.1"
+
+intents:
+  - greet
+  - goodbye
+  - affirm
+  - deny
+  - mood_great
+  - mood_unhappy
+  - bot_challenge
+  - luminar_intro
+  - welcome
+  - ask_courses
+  - ask_admission
+  - ask_faculty
+  - ask_fees
+
+responses:
+  utter_greet:
+  - text: "Hey! How are you?"
+  - text: "welcome to luminar Technolab"
+ 
+  utter_welcome:
+  - text: "Hi , Thank you for contacting Luminar Technolab. Please help us with your Name and Phone number to get in touch with you"
+
+  utter_ask_courses:
+  - text: "Luminar Technolab, No.1 Software Training Institute offers various Software Courses along with 100% Guaranteed Placement assistance. 
+           We provide Big Data Training, Data Science, Python,Mean Stack,Software Testing & many more."
+
+  utter_ask_admission:
+  - text: "Our admission process involves filling an online application form, submitting required documents, and an entrance test. You can find more details on our website."
+  
+  utter_ask_faculty:
+  - text: "We have a diverse faculty with experts in various fields.. And 10+years of experienced teachers for all domains, You can find more details on our website."
+
+  utter_ask_fees:
+  - text: "We are providing different fees depents on courses you are selecting, for more info you can visit our website"
+
+  utter_cheer_up:
+  - text: "Here is something to cheer you up:"
+    image: "https://i.imgur.com/nGF1K8f.jpg"
+
+  utter_did_that_help:
+  - text: "Did that help you?"
+
+  utter_happy:
+  - text: "Great, carry on!"
+
+  utter_goodbye:
+  - text: "Bye"
+
+  utter_luminar_intro:
+  - text: "Luminar Technolab Pvt Ltd
+           Ground Floor,K7 REALTY,
+           Juma masjid road,
+           Seaport - Airport Rd, near Opp: District Panchayat,
+           Kakkanad, Kochi, Kerala - 682030
+           Call:+91 8086 651 651
+           Email: contact@luminartechnolab.com"
+  - text: "Our founder is Rahul M Kumar"         
+
+  utter_iamabot:
+  - text: "I am a bot, powered by Rasa."
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
+
+
+

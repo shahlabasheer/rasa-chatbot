@@ -1,0 +1,58 @@
+version: "3.1"
+
+stories:
+
+- story: happy path
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_great
+  - action: utter_happy
+
+- story: welcome and ask courses
+  steps:
+  - intent: welcome
+  - action: utter_welcome
+  - intent: ask_courses
+  - action: utter_ask_courses
+
+- story: ask about admission
+  steps:
+  - intent: ask_admission
+  - action: utter_ask_admission
+
+- story: ask about faculty
+  steps:
+  - intent: ask_faculty
+  - action: utter_ask_faculty
+
+- story: ask about fees
+  steps:
+  - intent: ask_fees
+  - action: utter_ask_fees 
+
+- story: sad path 1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_unhappy
+  - action: utter_cheer_up
+  - action: utter_did_that_help
+  - intent: affirm
+  - action: utter_happy
+
+- story: sad path 2
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_unhappy
+  - action: utter_cheer_up
+  - action: utter_did_that_help
+  - intent: deny
+  - action: utter_goodbye
+
+
+- story: luminar
+  steps:
+  - intent: luminar_intro
+  - action: utter_luminar_intro
