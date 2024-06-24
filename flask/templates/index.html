@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rasa Chatbot</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <script>
+        function sendMessage() {
+            let userInput = document.getElementById('userInput').value;
+               
+            let chatBox = document.getElementById('chatBox');
+            chatBox.innerHTML += '<div id="qstn"> <span class="material-symbols-outlined">face</span> : ' + userInput + '</div>';
+            fetch('/chat', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ message: userInput })
+            })
+            .then(response => response.json())
+            .then(data => {
+                chatBox.innerHTML += '<div><span class="material-symbols-outlined">smart_toy</span> ' + data.message + '</div>';
+                document.getElementById('userInput').value = '';
+            });
+        }
+    </script>
+</head>
+<body>
+    <div id="chatBox"></div>
+    <input type="text" id="userInput" placeholder="Type a message">
+    <button onclick="sendMessage()">Send</button>
+</body>
+</html>
